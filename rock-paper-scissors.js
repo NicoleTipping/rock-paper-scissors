@@ -4,14 +4,14 @@ function getComputerChoice() {
     let paper = "paper";
     let scissors = "scissors";
     // SET choice to a random whole number between 0 and 2
-    let choice = Math.floor(Math.random() * 3);
+    let computerChoice = Math.floor(Math.random() * 3);
     // IF choice is equal to zero
-    if(choice == 0){
+    if(computerChoice == 0){
         // return rock
         return rock;
     }
     // ELSE IF choice is equal to one
-    else if (choice == 1) {
+    else if (computerChoice == 1) {
         // return paper
         return paper;
     }
@@ -47,3 +47,11 @@ function getHumanChoice() {
     }
 }
 console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+// This function playRound will take the human and computer choices as arguments, plays a single round, increments the round winner's score and logs a winner
+function playRound(humanc) {
+
+}
