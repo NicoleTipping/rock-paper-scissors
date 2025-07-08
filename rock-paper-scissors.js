@@ -56,37 +56,43 @@ function playGame() {
         // IF userChoice equals rock and computerChoice is equals rock
         if (userChoice === computerChoice) {
             // return "No Winner This Round"
-            console.log('No Winner This Round');
+            results.textContent = 'No Winner This Round';
         }
         // ELSE IF userChoice equals rock and computerChoice equals paper
         else if (userChoice === Rock && computerChoice === Paper) {
             // return computerScore + 1;
-            console.log('You lose! Paper beats Rock.', ++computerScore);
+            results.textContent = 'You lose! Paper beats Rock.'; 
+            score.textContent = `You: ${userScore} --- Computer: ${++computerScore}`;
         }
         // ELSE IF userChoice equals rock and computerChoice equals scissors
         else if (userChoice === Rock && computerChoice === Scissors) {
             // return userScore + 1;
-            console.log('You Win! Rock beats Scissors.', ++userScore);
+            results.textContent = 'You Win! Rock beats Scissors.'; 
+            score.textContent = `You: ${++userScore} --- Computer: ${computerScore}`;
         }
         // ELSE IF userChoice equals paper and computerChoice equals rock
         else if (userChoice === Paper && computerChoice === Rock) {
             // return userScore + 1;
-            console.log('You Win! Paper beats Rock.', ++userScore);
+            results.textContent = 'You Win! Paper beats Rock.'; 
+            score.textContent = `You: ${++userScore} --- Computer: ${computerScore}`;
         }
         // ELSE IF userChoice equals paper and computerChoice equals scissors
         else if (userChoice === Paper && computerChoice === Scissors) {
             // return userScore + 1;
-            console.log('You Lose! Scissors beats Paper.', ++computerScore);
+            results.textContent = 'You Lose! Scissors beats Paper.';
+            score.textContent = `You: ${userScore} --- Computer: ${++computerScore}`;
         }
         // ELSE IF userChoice equals scissors and computerChoice equals rock
         else if (userChoice === Scissors && computerChoice === Rock) {
             // return computerScore + 1;
-            console.log('You Lose! Rock beats Scissors.', ++computerScore);
+            results.textContent ='You Lose! Rock beats Scissors.';
+            score.textContent = `You: ${userScore} --- Computer: ${++computerScore}`;
         }
         // ELSE IF userChoice equals scissors and computerChoice equals paper
         else if (userChoice === Scissors && computerChoice === Paper) {
             // return userScore + 1;
-            console.log('You Win! Scissors beats Paper.', ++userScore);
+            results.textContent = 'You Win! Scissors beats Paper.'
+            score.textContent = `You: ${++userScore} --- Computer: ${computerScore}`;
         }
     }
 
@@ -125,34 +131,9 @@ function playGame() {
     let results = document.createElement('div');
     body.appendChild(results);
 
-    results.textContent = `Your Score: ${userScore} - Computer Score: ${computerScore}`;
 
-
-    // // Round 1
-    // let userSelection = getHumanChoice();
-    // let computerSelection = getComputerChoice();
-    // playRound(userSelection, computerSelection);
-
-    // // Round 2
-    // userSelection = getHumanChoice();
-    // computerSelection = getComputerChoice();
-    // playRound(userSelection, computerSelection);
-
-    // // Round 3
-    // userSelection = getHumanChoice();
-    // computerSelection = getComputerChoice();
-    // playRound(userSelection, computerSelection);
-
-    // // Round 4
-    // userSelection = getHumanChoice();
-    // computerSelection = getComputerChoice();
-    // playRound(userSelection, computerSelection);
-
-    // // Round 5
-    // userSelection = getHumanChoice();
-    // computerSelection = getComputerChoice();
-    // playRound(userSelection, computerSelection);
-    // gameWinner();
+    let score = document.createElement('div');
+    body.appendChild(score);
 }
 
 playGame();
